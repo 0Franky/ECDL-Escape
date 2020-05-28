@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float speed = 5;
+
     private Rigidbody2D rb;
     private float dirX;
     // Start is called before the first frame update
@@ -20,6 +22,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(dirX * 5, 0);
+        rb.velocity = new Vector2(dirX * speed, 0);
     }
 }
