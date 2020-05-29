@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         dirX = Input.GetAxis("Horizontal");
 
-        if (dirX > 0 || dirX < 0)
+        if (dirX != 0)
         {
             rb.transform.localScale = new Vector3(RoundItUp(dirX), 1, 1);
             rb.AddForce(new Vector2(moveForce * dirX * Time.deltaTime, 0));
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(anmtr.GetInteger("run"));
         if (rb.velocity.x <= 0.1 && rb.velocity.x >= -0.1) {
             anmtr.SetInteger("run", 0);
-            //Debug.Log("Too little force");
+            Debug.Log("Too little force");
         }
     }
 
