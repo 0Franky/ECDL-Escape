@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ClickScript : MonoBehaviour
 {
-    public Text textshowed;
+  
     public void ClickOnPlay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
