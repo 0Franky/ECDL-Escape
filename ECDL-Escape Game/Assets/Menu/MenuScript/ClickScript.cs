@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ClickScript : MonoBehaviour
 {
-    
-    public void CLickOnPlay()
+    public Text textshowed;
+    public void ClickOnPlay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
@@ -15,4 +16,5 @@ public class ClickScript : MonoBehaviour
         Application.Quit();
     }
    
+    
 }
