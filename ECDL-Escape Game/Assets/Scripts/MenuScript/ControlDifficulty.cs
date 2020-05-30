@@ -1,16 +1,47 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ControlDifficulty : MonoBehaviour
 {
+
+    private static readonly string FirstPlay = "FirstPlay";
+    private static readonly string Difficolta = "Difficolta";
+    private int firstPlayInt;
     private Text textshowed;
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+
+        //PlayerPrefs.DeleteAll();
         textshowed = GetComponent<Text>();
+        firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
+
+        if (firstPlayInt == 0)
+        {
+            textshowed.text = "FACILE";
+            PlayerPrefs.SetString(Difficolta, textshowed.text);
+            PlayerPrefs.SetInt(FirstPlay, -1);
+        }
+        else
+        {
+            textshowed.text = PlayerPrefs.GetString(Difficolta);
+        }
+   
     }
+
+    public void SaveDifficultySettings()
+    {
+        PlayerPrefs.SetString(Difficolta, textshowed.text);
+
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (!focus)
+        {
+            SaveDifficultySettings();
+        }
+    }
+
 
     public void ChangeDifficultyFarward()
     {
