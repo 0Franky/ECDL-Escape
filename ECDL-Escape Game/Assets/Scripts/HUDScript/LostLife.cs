@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -11,6 +12,10 @@ public class LostLife : MonoBehaviour
 {
 
     private static readonly string Difficolta = "Difficolta";
+    private static readonly int NUMERO_VITE_FACILE = 3;
+    private static readonly int NUMERO_VITE_MEDIA = 2;
+    private static readonly int NUMERO_VITE_DIFFICILE = 1;
+
     private int numberLife;
     public GameObject[] Life;
     // Start is called before the first frame update
@@ -21,6 +26,23 @@ public class LostLife : MonoBehaviour
        
 
     }
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            if(numberLife != 0)
+            {
+                setAnimationLostLife(numberLife - 1);
+                numberLife--;
+            }
+            else
+            {
+                SceneManager.LoadScene(0);
+            }
+       
+        }
+    }
 
     private void SettaVite()
     {
@@ -28,25 +50,45 @@ public class LostLife : MonoBehaviour
         switch (PlayerPrefs.GetString(Difficolta))
         {
             case "FACILE":
-                numberLife = 3;
+                numberLife = NUMERO_VITE_FACILE;
+                activeLife(numberLife);
                 break;
             case "MEDIA":
-                numberLife = 2;
-                Life[2].SetActive(false);
+                numberLife = NUMERO_VITE_MEDIA;
+                activeLife(numberLife);
                 break;
             case "DIFFICILE":
-                numberLife = 1;
-                Life[1].SetActive(false);
-                Life[2].SetActive(false);
+                numberLife = NUMERO_VITE_DIFFICILE;
+                activeLife(numberLife);
                 break;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+   private void activeLife(int nLife)
     {
-        if (Input.GetKeyDown(KeyCode.D)){
-           
+        if (numberLife <= Life.Length)
+        {
+            Debug.Log("SONO IF QUI");
+            for (int i = 0; i < Life.Length; i++)
+            {
+                if (i > numberLife-1)
+                {
+                    Life[i].SetActive(false);
+                    Debug.Log("SONO QUI");
+                }
+                else
+                {
+                    Life[i].SetActive(true);
+                }
+            }
         }
     }
+
+    private void setAnimationLostLife(int i)
+    {
+            Animator anim = Life[i].GetComponent<Animator>();
+            anim.SetBool("lost", true);
+    }
+
+
 }

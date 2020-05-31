@@ -1234,10 +1234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50642a94a038ce41a5097ec503ad6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life:
-  - {fileID: 738889880}
-  - {fileID: 1855647849}
-  - {fileID: 1129077601}
+  Life: {fileID: 738889880}
 --- !u!1 &1482191295
 GameObject:
   m_ObjectHideFlags: 0

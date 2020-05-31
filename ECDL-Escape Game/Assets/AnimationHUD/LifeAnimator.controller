@@ -59,7 +59,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 6551419090515655663}
-    m_Position: {x: 510, y: 150, z: 0}
+    m_Position: {x: 540, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -9117927806438206567}
     m_Position: {x: 330, y: 280, z: 0}
@@ -87,6 +87,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: 
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: lostLife
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9117927806438206567}
