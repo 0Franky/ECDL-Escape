@@ -31,14 +31,16 @@ public class LostLife : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if(numberLife != 0)
+            if(numberLife > 1)
             {
                 setAnimationLostLife(numberLife - 1);
                 numberLife--;
             }
             else
             {
-                SceneManager.LoadScene(0);
+                setAnimationLostLife(numberLife - 1);
+                Debug.Log("HAI PERSO");
+                //SceneManager.LoadScene(0);
             }
        
         }
