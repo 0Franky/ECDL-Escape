@@ -23,10 +23,10 @@ public class PlayerMovement2 : MonoBehaviour {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         // Jump script
-        if (Input.GetButtonDown("Jump")) {
+        if (Input.GetButtonDown("Jump") && !inCombat) {
             jump = true;
             // Animation plays only if player is grounded (otherwise it could play multiple times when in air)
-            if (controller.isGrounded() && !inCombat) {
+            if (controller.isGrounded()) {
                 anmtr.SetBool("jump", true);
             }
         }
