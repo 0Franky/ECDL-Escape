@@ -9,6 +9,7 @@ TagManager:
   - Page3
   - Page4
   - Page5
+  - Page
   layers:
   - Default
   - TransparentFX

@@ -29,9 +29,16 @@ public class PauseMenu : MonoBehaviour
     private void Pause()
     {
         pauseMenuUI.SetActive(true);
+        GameObject[] page = GameObject.FindGameObjectsWithTag("Page");
         if (inventory.activeInHierarchy)
         {
             inventory.SetActive(false);
+            for(int i = 0; i <page.Length; i++)
+            {
+                page[i].SetActive(false);
+            }
+
+
         }
         Time.timeScale = 0f;
         GameisPaused = true;
