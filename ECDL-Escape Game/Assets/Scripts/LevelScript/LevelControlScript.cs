@@ -85,18 +85,15 @@ public class LevelControlScript : MonoBehaviour
 
     public void youWin()
     {
-        if (sceneIndex == 3)
-            Invoke("loadMainMenu", 1f);
-        else
-        {
-            if (levelPassed < sceneIndex)
-                PlayerPrefs.SetInt("LevelPassed", sceneIndex);
+        if (levelPassed < sceneIndex)
+            PlayerPrefs.SetInt("LevelPassed", sceneIndex);
 
-            levelSign.gameObject.SetActive(false);
-            youWinObject.gameObject.SetActive(true);
-            Invoke("loadNextLevel", 1f);
 
-        }
+        levelSign.SetActive(false);
+        youWinObject.gameObject.SetActive(true);
+        Debug.Log("Sexy WIN");
+        Invoke("fermaTempo", 1f);
+        
 
     }
 
@@ -105,12 +102,20 @@ public class LevelControlScript : MonoBehaviour
         levelSign.SetActive(false);
         gameOverObject.gameObject.SetActive(true);
         Debug.Log("Sexy Lose");
-        Time.timeScale = 0f;
+        Invoke("fermaTempo", 1f);
     }
 
     public void loadNextLevel()
     {
-        SceneManager.LoadScene(sceneIndex + 1);
+        if(sceneIndex >= 3)
+        {
+            loadMainMenu();
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneIndex + 1);
+        }
+       
     }
     
     public void loadMainMenu()
@@ -123,6 +128,10 @@ public class LevelControlScript : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
+    private void fermaTempo()
+    {
+        Time.timeScale = 0f;
+    }
 
 }
 

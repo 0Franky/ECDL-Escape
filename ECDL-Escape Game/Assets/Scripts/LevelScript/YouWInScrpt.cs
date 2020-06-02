@@ -7,8 +7,13 @@ public class YouWInScrpt : MonoBehaviour
     // Start is called before the first frame update
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        Debug.Log("Hai Vinto");
-        LevelControlScript.instance.youWin();
+        
+        if (collider2D.CompareTag("Player"))
+        {
+            Debug.Log("Hai Vinto");
+            LevelControlScript.instance.youWin();
+        }
+        
     }
 
     

@@ -12,7 +12,11 @@ public class DestroyOnClickPage : MonoBehaviour
    
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        Destroy(gameObject);
-        counter.text = (Int16.Parse(counter.text) + 1).ToString();
+        if (collider2D.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            counter.text = (Int16.Parse(counter.text) + 1).ToString();
+        }
+        
     }
 }
