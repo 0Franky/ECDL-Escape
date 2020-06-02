@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-
 public class LostLife : MonoBehaviour
 {
 
@@ -16,6 +15,8 @@ public class LostLife : MonoBehaviour
     private static readonly int NUMERO_VITE_MEDIA = 2;
     private static readonly int NUMERO_VITE_DIFFICILE = 1;
 
+    public LevelControlScript levelControl;
+    
     private int numberLife;
     public GameObject[] Life;
     // Start is called before the first frame update
@@ -40,6 +41,7 @@ public class LostLife : MonoBehaviour
             {
                 setAnimationLostLife(numberLife - 1);
                 Debug.Log("HAI PERSO");
+                levelControl.youLose();
                 //SceneManager.LoadScene(0);
             }
        

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: KAMASUTRA
   description: IL SESSO E' BELLO
-  artwork: {fileID: 21300000, guid: 6cf87b504fedfa347ba3df90d0e2ff12, type: 3}
+  artwork: {fileID: 0}

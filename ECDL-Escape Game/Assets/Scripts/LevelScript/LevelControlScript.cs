@@ -47,9 +47,10 @@ public class LevelControlScript : MonoBehaviour
 
     public void youLose()
     {
-        levelSign.SetActive(false);
-        gameOverText.gameObject.SetActive(true);
+        //levelSign.SetActive(false);
+        //gameOverText.gameObject.SetActive(true);
         Invoke("loadMainMenu", 1f);
+        Debug.Log("Sexy Lose");
     }
 
     private void loadNextLevel()
