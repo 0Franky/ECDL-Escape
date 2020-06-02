@@ -7,6 +7,7 @@ public class CombatTrigger : MonoBehaviour {
     public CombatManager combatManager;
     public PlayerMovement2 movement;
     public Transform myPos;
+    public int maxHealth = 2;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
