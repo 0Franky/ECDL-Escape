@@ -7,8 +7,11 @@ public class LevelControlScript : MonoBehaviour
 {
 
     public static LevelControlScript instance = null;
-    GameObject levelSign, gameOverText, youWinText;
+    GameObject levelSign, gameOverObject, youWinObject;
     int sceneIndex, levelPassed;
+    public static bool GameisPaused = false;
+    public GameObject pauseMenuUI;
+    public GameObject inventory;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,16 +20,68 @@ public class LevelControlScript : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
 
+        Time.timeScale = 1f;
         levelSign = GameObject.Find("LevelNumber");
-        gameOverText = GameObject.Find("GameOverText");
-        youWinText = GameObject.Find("YouWinText");
+        gameOverObject = GameObject.Find("GameOver");
+        youWinObject = GameObject.Find("YouWin");
 
-        //gameOverText.gameObject.SetActive(false);
-        //youWinText.gameObject.SetActive(false);
+        gameOverObject.gameObject.SetActive(false);
+        youWinObject.gameObject.SetActive(false);
+        pauseMenuUI.gameObject.SetActive(false);
+        levelSign.gameObject.SetActive(true);
 
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         levelPassed = PlayerPrefs.GetInt("LevelPassed");
     }
+
+    void Update()
+    {
+        if(!(gameOverObject.gameObject.activeInHierarchy || youWinObject.gameObject.activeInHierarchy))
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                if (GameisPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
+            }
+        }
+        
+
+    }
+
+
+
+    private void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        GameObject[] page = GameObject.FindGameObjectsWithTag("Page");
+        if (inventory.activeInHierarchy)
+        {
+            inventory.SetActive(false);
+            for (int i = 0; i < page.Length; i++)
+            {
+                page[i].SetActive(false);
+            }
+
+
+
+        }
+        Time.timeScale = 0f;
+        GameisPaused = true;
+    }
+
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameisPaused = false;
+    }
+
 
     public void youWin()
     {
@@ -38,7 +93,7 @@ public class LevelControlScript : MonoBehaviour
                 PlayerPrefs.SetInt("LevelPassed", sceneIndex);
 
             levelSign.gameObject.SetActive(false);
-            youWinText.gameObject.SetActive(true);
+            youWinObject.gameObject.SetActive(true);
             Invoke("loadNextLevel", 1f);
 
         }
@@ -48,20 +103,26 @@ public class LevelControlScript : MonoBehaviour
     public void youLose()
     {
         levelSign.SetActive(false);
-        //gameOverText.gameObject.SetActive(true);
-        Invoke("loadMainMenu", 1f);
+        gameOverObject.gameObject.SetActive(true);
         Debug.Log("Sexy Lose");
+        Time.timeScale = 0f;
     }
 
-    private void loadNextLevel()
+    public void loadNextLevel()
     {
         SceneManager.LoadScene(sceneIndex + 1);
     }
     
-    private void loadMainMenu()
+    public void loadMainMenu()
     {
         SceneManager.LoadScene("Menu");
     }
+
+    public void loadThisLevel()
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
+
 
 }
 

@@ -30,7 +30,7 @@ public class LostLife : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             if(numberLife > 1)
             {
