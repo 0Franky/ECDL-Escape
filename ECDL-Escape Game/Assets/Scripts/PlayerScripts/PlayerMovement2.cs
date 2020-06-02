@@ -73,8 +73,10 @@ public class PlayerMovement2 : MonoBehaviour {
             else if(rb.position.x > enemyPos.position.x - 0.18) {
                 controller.Move((-runSpeed / 2) * Time.fixedDeltaTime, false, false);
             }
-            if(rb.velocity.x == 0 && rb.transform.localScale.x == -1) {
-                controller.Flip();
+            if(rb.velocity.x == 0) {
+                if (rb.transform.localScale.x == -1) {
+                    controller.Flip();
+                }
             }
         }
         
