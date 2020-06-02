@@ -7,8 +7,7 @@ using UnityEngine;
 public class PageObject : ScriptableObject
 {
     public new string name;
+    [TextArea]
     public string description;
-
-    public Sprite artwork;
    
 }

@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc07f3417c83434d812d2001a6b061f, type: 3}
   m_Name: Page4
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  artwork: {fileID: 0}
+  name: Capitolo 3
+  description: piccolo

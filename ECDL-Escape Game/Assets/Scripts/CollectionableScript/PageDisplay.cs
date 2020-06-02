@@ -9,12 +9,10 @@ public class PageDisplay : MonoBehaviour
     public Text titleText;
     public Text descriptionText;
 
-    public Image artworkImage;
     void Start()
     {
         titleText.text = page.name;
         descriptionText.text = page.description;
-        artworkImage.sprite = page.artwork;
     }
 
   

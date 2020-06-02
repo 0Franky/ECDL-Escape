@@ -10,15 +10,9 @@ public class DestroyOnClickPage : MonoBehaviour
 
     public Text counter;
    
-
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D collider2D)
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Destroy(gameObject);
-            counter.text = (Int16.Parse(counter.text) + 1).ToString();
-            
-        }
+        Destroy(gameObject);
+        counter.text = (Int16.Parse(counter.text) + 1).ToString();
     }
 }

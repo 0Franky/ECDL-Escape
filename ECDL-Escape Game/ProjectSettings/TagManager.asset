@@ -9,6 +9,11 @@ TagManager:
   - Page3
   - Page4
   - Page5
+  - DestructiblePage1
+  - DestructiblePage2
+  - DestructiblePage3
+  - DestructiblePage4
+  - DestructiblePage5
   - Page
   layers:
   - Default

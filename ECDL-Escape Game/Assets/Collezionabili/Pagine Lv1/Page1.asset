@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc07f3417c83434d812d2001a6b061f, type: 3}
   m_Name: Page1
   m_EditorClassIdentifier: 
-  name: KAMASUTRA
-  description: IL SESSO E' BELLO
-  artwork: {fileID: 0}
+  name: Introduzione
+  description: "Il posto migliore per porre e rispondere a domande sullo sviluppo
+    con Unity.\r\n\r\nPer aiutare gli utenti a navigare nel sito abbiamo pubblicato
+    una guida alla navigazione del sito.\r\n\r\nSe sei un nuovo utente di Unity Answers,
+    consulta le nostre FAQ per ulteriori informazioni.\r\n\r\nAssicurati di consultare
+    la nostra Knowledge Base per le domande Unity pi\xF9 frequenti.\r\n\r\nSe sei
+    un moderatore, consulta la nostra pagina Linee guida per i moderatori .\r\n\r\nStiamo
+    apportando miglioramenti a UA, vedere l' elenco delle modifiche ."

@@ -21,8 +21,8 @@ public class LevelControlScript : MonoBehaviour
         gameOverText = GameObject.Find("GameOverText");
         youWinText = GameObject.Find("YouWinText");
 
-        gameOverText.gameObject.SetActive(false);
-        youWinText.gameObject.SetActive(false);
+        //gameOverText.gameObject.SetActive(false);
+        //youWinText.gameObject.SetActive(false);
 
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         levelPassed = PlayerPrefs.GetInt("LevelPassed");
@@ -47,7 +47,7 @@ public class LevelControlScript : MonoBehaviour
 
     public void youLose()
     {
-        //levelSign.SetActive(false);
+        levelSign.SetActive(false);
         //gameOverText.gameObject.SetActive(true);
         Invoke("loadMainMenu", 1f);
         Debug.Log("Sexy Lose");
