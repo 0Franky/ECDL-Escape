@@ -20,6 +20,7 @@ public class LevelControlScript : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
 
+       // PlayerPrefs.DeleteAll();
         Time.timeScale = 1f;
         levelSign = GameObject.Find("LevelNumber");
         gameOverObject = GameObject.Find("GameOver");
