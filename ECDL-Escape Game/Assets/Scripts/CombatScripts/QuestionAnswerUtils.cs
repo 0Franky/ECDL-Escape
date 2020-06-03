@@ -4,8 +4,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
-{
+public class NewBehaviourScript : MonoBehaviour {
 
     /* VARS */
     private int currentModule;
@@ -20,15 +19,13 @@ public class NewBehaviourScript : MonoBehaviour
     private string FILE_DONE_QUESTIONS = "qd.bin";
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+
     }
 
     /*
@@ -36,29 +33,24 @@ public class NewBehaviourScript : MonoBehaviour
         numerModule = numero del modulo di cui caricheremo le domande; 
         loadModule = boolean -> carica tutte le domande; se false continua dall'ultimo salvataggio
      */
-    public void setModule(int numerModule)
-    {
+    public void setModule(int numerModule) {
         setModule(numerModule, false);
     }
 
-    public void setModule(int numerModule, bool loadModule)
-    {
+    public void setModule(int numerModule, bool loadModule) {
         currentModule = numerModule;
         loadData(loadModule);
     }
 
     /* Restituisce la domanda */
-    public string getQuestion()
-    {
+    public string getQuestion() {
         return questionAnswerData[0].getQuestion();
     }
 
     /* Restituisce un array di possibili risposte */
-    public List<string> getAnswers()
-    {
+    public List<string> getAnswers() {
         List<string> answers = new List<string>();
-        foreach (Answer answer in questionAnswerData[0].getAnswerList())
-        {
+        foreach (Answer answer in questionAnswerData[0].getAnswerList()) {
             answers.Add(answer.getAnswer());
         }
         return answers;
@@ -70,27 +62,23 @@ public class NewBehaviourScript : MonoBehaviour
 
      Inoltre richiama nextQuestion()
      */
-    public bool checkAnswer(int numberAnswer)
-    {
+    public bool checkAnswer(int numberAnswer) {
         bool result = questionAnswerData[0].getAnswerList()[numberAnswer].isCorrect();
         nextQuestion();
         return result;
     }
 
     /* Carica le domande da file */
-    private void loadData(bool loadFromStart)
-    {
+    private void loadData(bool loadFromStart = true) {
         string fileName = MODULE_1;
-        if (currentModule == 2)
-        {
+        if (currentModule == 2) {
             fileName = MODULE_2;
         }
 
         doneQuestions.Clear();
         questionAnswerData.Clear();
 
-        if (loadFromStart)
-        {
+        if (loadFromStart) {
             loadDoneQuestions();
         }
 
@@ -98,27 +86,18 @@ public class NewBehaviourScript : MonoBehaviour
 
         string[] rows = dataString.text.Split(new char[] { '\n' });
 
-        for (int k = 0; k < rows.Length; k++)
-        {
-            if (String.IsNullOrEmpty(rows[k]) && !doneQuestions.Contains(k))
-            {
+        for (int k = 0; k < rows.Length; k++) {
+            if (String.IsNullOrEmpty(rows[k]) && !doneQuestions.Contains(k)) {
                 string[] cols = rows[k].Split(new char[] { ';' });
 
                 QuestionAnswer questionAnswer = new QuestionAnswer();
-                for (int i = 0; i < cols.Length; i++)
-                {
-                    if (String.IsNullOrEmpty(cols[i]))
-                    {
-                        if (i == 0)
-                        {
+                for (int i = 0; i < cols.Length; i++) {
+                    if (String.IsNullOrEmpty(cols[i])) {
+                        if (i == 0) {
                             questionAnswer.setNumberQuestion(Int16.Parse(cols[i]));
-                        }
-                        else if (i == 1)
-                        {
+                        } else if (i == 1) {
                             questionAnswer.setQuestion(cols[i]);
-                        }
-                        else
-                        {
+                        } else {
                             questionAnswer.addAnswer(new Answer(cols[i], i == 1));
                         }
                     }
@@ -130,21 +109,17 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     /* Carica la domanda successiva */
-    private void nextQuestion()
-    {
+    private void nextQuestion() {
         doneQuestions.Add(questionAnswerData[0].getNumberQuestion());
         saveDoneQuestions();
         questionAnswerData.RemoveAt(0);
-        if (questionAnswerData.Count == 0)
-        {
+        if (questionAnswerData.Count == 0) {
             loadData();
         }
     }
 
-    private void saveDoneQuestions()
-    {
-        if (File.Exists(FILE_DONE_QUESTIONS))
-        {
+    private void saveDoneQuestions() {
+        if (File.Exists(FILE_DONE_QUESTIONS)) {
             File.Delete(FILE_DONE_QUESTIONS);
         }
 
@@ -154,10 +129,8 @@ public class NewBehaviourScript : MonoBehaviour
         s.Close();
     }
 
-    private void loadDoneQuestions()
-    {
-        if (File.Exists(FILE_DONE_QUESTIONS))
-        {
+    private void loadDoneQuestions() {
+        if (File.Exists(FILE_DONE_QUESTIONS)) {
             Stream s = File.OpenRead(FILE_DONE_QUESTIONS);
             BinaryFormatter bf = new BinaryFormatter();
             doneQuestions = (List<int>)bf.Deserialize(s);
@@ -167,64 +140,53 @@ public class NewBehaviourScript : MonoBehaviour
 
 
     /* CLASSI DI SUPPORTO */
-    class Answer
-    {
+    class Answer {
         private string answer;
         private bool _isCorrect;
 
-        public Answer(string answer, bool _isCorrect = false)
-        {
+        public Answer(string answer, bool _isCorrect = false) {
             this.answer = answer;
             this._isCorrect = _isCorrect;
         }
 
-        public string getAnswer()
-        {
+        public string getAnswer() {
             return answer;
         }
 
-        public bool isCorrect()
-        {
+        public bool isCorrect() {
             return _isCorrect;
         }
     }
 
 
-    class QuestionAnswer
-    {
+    class QuestionAnswer {
         private int numberQuestion;
         private string question;
         private List<Answer> answerList = new List<Answer>();
 
         public QuestionAnswer() { }
 
-        public void setNumberQuestion(int numberQuestion)
-        {
+        public void setNumberQuestion(int numberQuestion) {
             this.numberQuestion = numberQuestion;
         }
 
-        public void setQuestion(string question)
-        {
+        public void setQuestion(string question) {
             this.question = question;
         }
 
-        public void addAnswer(Answer answer)
-        {
+        public void addAnswer(Answer answer) {
             this.answerList.Add(answer);
         }
 
-        public int getNumberQuestion()
-        {
-           return numberQuestion;
+        public int getNumberQuestion() {
+            return numberQuestion;
         }
 
-        public string getQuestion()
-        {
+        public string getQuestion() {
             return question;
         }
 
-        public List<Answer> getAnswerList()
-        {
+        public List<Answer> getAnswerList() {
             return answerList;
         }
     }
