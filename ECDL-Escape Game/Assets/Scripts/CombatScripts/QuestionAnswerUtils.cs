@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class QuestionAnswerUtils : MonoBehaviour {
 
     /* VARS */
     private int currentModule;
