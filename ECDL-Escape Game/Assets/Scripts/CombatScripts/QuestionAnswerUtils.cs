@@ -83,12 +83,12 @@ public class QuestionAnswerUtils : MonoBehaviour {
         string[] rows = dataString.text.Split(new char[] { '\n' });
 
         for (int k = 0; k < rows.Length; k++) {
-            if (String.IsNullOrEmpty(rows[k]) && !doneQuestions.Contains(k)) {
+            if (!String.IsNullOrEmpty(rows[k]) && !doneQuestions.Contains(k)) {
                 string[] cols = rows[k].Split(new char[] { ';' });
 
                 QuestionAnswer questionAnswer = new QuestionAnswer();
                 for (int i = 0; i < cols.Length; i++) {
-                    if (String.IsNullOrEmpty(cols[i])) {
+                    if (!String.IsNullOrEmpty(cols[i])) {
                         if (i == 0) {
                             questionAnswer.setNumberQuestion(Int16.Parse(cols[i]));
                         } else if (i == 1) {
