@@ -7,7 +7,7 @@ using UnityEngine;
 public class PageObject : ScriptableObject
 {
     public new string name;
-    [TextArea]
+    [TextArea (10,40)]
     public string description;
    
 }

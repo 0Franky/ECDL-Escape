@@ -12,5 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc07f3417c83434d812d2001a6b061f, type: 3}
   m_Name: Page4
   m_EditorClassIdentifier: 
-  name: Capitolo 3
-  description: piccolo
+  name: Gerarchia delle cartelle
+  description: "Si pu\xF2 gi\xE0 intuire, pur avendo utilizzato poche finestre, la
+    gerarchia esistente tra gli elementi di Windows. Difatti si \xE8 visto che: \r\n\u2022\tIl
+    livello pi\xF9 alto \xE8 quello del Desktop: il Desktop \xE8 la prima cosa che
+    appare dopo l\u2019avvio di Windows. \r\n\u2022\tAll\u2019interno del Desktop
+    appaiono i primi elementi di Windows: il Cestino, e in particolare l\u2019icona
+    Computer. \r\n\n\u2022Con due clic con il tasto sinistro del mouse sull\u2019icona
+    Computer si apre la sua finestra: all\u2019interno sono presenti le unit\xE0
+    di memoria del computer: L\u2019unita Floppy disk, l\u2019unit\xE0 CD ROM, e
+    l\u2019unit\xE0 Hard disk. \r\n\u2022Con due clic con il tasto sinistro del mouse
+    sull\u2019icona dell\u2019Hard disk si apre la sua finestra: all\u2019interno
+    si trova il contenuto dell\u2019Hard disk (Cartelle, documenti, programmi\u2026).
+    \r\n\nQuesta gerarchia \xE8 visibile nella Barra degli indirizzi.\r\n\nI file
+    sono raggruppati in directory, che a loro volta sono organizzate in una struttura
+    gerarchica. Al livello pi\xF9 alto della gerarchia si trova la directory \"radice\"
+    o \"root\", rappresentata da una barra \"/\". Ogni directory del file system
+    pu\xF2 contenere a sua volta molte directory. Per convenzione, i diversi livelli
+    delle directory vengono separati con una barra /. La directory root (/) contiene,
+    tra le altre, le sottodirectory /usr, /bin, /home e /lib. La sottodirectory /home
+    contiene a sua volta utente1, utente2 e utente3.\n\nPer specificare una directory
+    (o un file al suo interno) occorre indicare i nomi delle directory in cui essa
+    \xE8 contenuta. Questo tipo di indicazione viene detta percorso. \nTutte le sottodirectory
+    e i file contenuti in una stessa directory devono avere un nome unico, che li
+    identifichi in modo esclusivo. \xC8 invece possibile che due o pi\xF9 file contenuti
+    in directory diverse abbiano lo stesso nome.\nAd esempio, la directory /usr contiene
+    la sottodirectory /usr/lib. Tra /usr/lib e /lib non vi sono conflitti in quanto
+    i percorsi sono diversi. I percorsi dei file hanno esattamente la stessa struttura
+    dei percorsi delle directory. Il percorso di un file descrive la sua collocazione
+    nella gerarchia del file system.\nAd esempio, se la directory /home/utente2 contiene
+    un file di nome relazione5, il percorso del file sar\xE0 /home/utente2/relazione5.
+    Questo percorso indica che il file relazione5 si trova nella directory utente2,
+    la quale \xE8 contenuta nella directory home, la quale \xE8 contenuta a sua volta
+    nella directory root (/). Le directory possono contenere solo sottodirectory,
+    solo file o entrambi.\r\n"
