@@ -32,8 +32,9 @@ public class CombatManager : MonoBehaviour {
 
     public void DisableCombatCanvas() {
         combatCanvas.GetComponent<Animator>().SetBool("disappear", true);
-        StartCoroutine(ToggleButtons(true, 0.5f));
-        Invoke("DisableCombatCanvasInvoked", 0.5f);
+        StartCoroutine(ToggleButtons(true, enemy.gameObject.tag, 0.6f));
+        StartCoroutine(ToggleButtons(true, "Question", 0.6f));
+        Invoke("DisableCombatCanvasInvoked", 0.6f);
     }
 
     public void HeadClicked() {
@@ -46,21 +47,27 @@ public class CombatManager : MonoBehaviour {
         Debug.Log("Body Clicked");
     }
 
+    public void AnswerClicked() {
+        StartCoroutine(ToggleButtons(false, "Question"));
+    }
+
     void DisableCombatCanvasInvoked() {
         combatCanvas.transform.Find(enemy.gameObject.tag).gameObject.SetActive(false);
+        combatCanvas.transform.Find("Question").gameObject.SetActive(false);
+        combatCanvas.transform.Find("Time").gameObject.SetActive(false);
         combatCanvas.SetActive(false);
     }
     void DisableButtonsAndShowQuestion() {
-        StartCoroutine(ToggleButtons(false));
+        StartCoroutine(ToggleButtons(false, enemy.gameObject.tag));
         combatCanvas.transform.Find("Question").gameObject.SetActive(true);
         combatCanvas.transform.Find("Time").gameObject.SetActive(true);
     }
 
-    IEnumerator ToggleButtons(bool activate, float delayTime = 0f) {
+    IEnumerator ToggleButtons(bool activate, string parentID, float delayTime = 0f) {
         yield return new WaitForSeconds(delayTime);
-        Component[] buttons = combatCanvas.transform.Find(enemy.gameObject.tag).gameObject.GetComponentsInChildren<Button>(true);
+        Component[] buttons = combatCanvas.transform.Find(parentID).gameObject.GetComponentsInChildren<Button>(true);
         foreach (Button button in buttons) {
-            button.enabled = activate;
+            button.interactable = activate;
         }
     }
 }
