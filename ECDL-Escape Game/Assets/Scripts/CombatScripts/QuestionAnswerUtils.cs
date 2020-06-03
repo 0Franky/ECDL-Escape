@@ -7,7 +7,7 @@ using UnityEngine;
 public class QuestionAnswerUtils : MonoBehaviour {
 
     /* VARS */
-    private int currentModule;
+    private int currentModule = 1;
     private List<int> doneQuestions = new List<int>();
 
     /* QUESTION/ANSWER VARS */
