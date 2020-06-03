@@ -18,6 +18,6 @@ public class LevelNumberScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "Level" + sceneIndex;
+        text.text = "Livello " + sceneIndex;
     }
 }

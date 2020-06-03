@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc07f3417c83434d812d2001a6b061f, type: 3}
+  m_Name: Page3
+  m_EditorClassIdentifier: 
+  name: Copyright
+  description: "Copyright in lingua inglese significa letteralmente \u201Cdiritto
+    di copia\u201D e sottintende tutta la normativa che garantisce il diritto d'autore,
+    cio\xE8 che l'autore di un'opera intellettuale (libro, musica, opera d'arte,
+    film e anche software) abbia la facolt\xE0 esclusiva di diffondere ci\xF2 che
+    ha prodotto. Il diritto di copia \xE8 garantito per legge, in Italia dalla legge
+    633 del 1941 e successive modifiche, e impedisce, a chiunque non sia autorizzato
+    in base alla licenza di utilizzo, di duplicare e diffondere quanto protetto.\n\nPer
+    ci\xF2 che riguarda il software, nel 1984 Richard Stallman e la Free Software
+    Foundation coniarono il termine Copyleft, giocando sul doppio senso della parola
+    \u201Cright\u201D che in inglese significa sia \u201Cdiritto\u201D che \u201Cdestra\u201D;
+    in questo modo hanno dato il via al free software (software libero) per distinguerlo
+    da quello proprietario. Si possono trovare su Wikipedia maggiori informazioni
+    sul software libero. Nel web si possono trovare file, soprattutto di carattere
+    multimediale come immagini, suoni, filmati, che sono facilmente scaricabili o
+    direttamente da pagine web oppure attraverso software particolari (file sharing,
+    torrent, ecc...).\nIl fatto che si possano scaricare non significa che ci\xF2
+    sia lecito. Pertanto \xE8 essenziale essere coscienti della licenza con cui vengono
+    rilasciati, come avvisa anche Google quando si cercano immagini. In tutti i paesi
+    vigono delle leggi sul copyright ed anche in Italia sono piuttosto severe a riguardo
+    della protezione dei diritti d'autore. La prima legge che riguarda questo tema
+    \xE8 la n. 633 del 1941, poi modificata in diverse occasioni anche per i sopravvenuti
+    cambiamenti tecnologici. Riguarda le opere intellettuali di diversi settori: 
+    \r\n\u2022La letteratura: opere letterarie, drammatiche, scientifiche, didattiche
+    e religiose, sia in forma scritta che orale  \r\n\u2022La musica: opere e composizioni
+    musicali, con o senza parole, opere drammaticomusicali e variazioni musicali
+    purch\xE9 costituiscano un'opera originale in s\xE9\r\n\u2022 Le arti figurative:
+    opere di scultura, pittura, disegni, incisioni o appartenenti ad arti figurative
+    similari, compresa la scenografia  \r\n\u2022L'architettura: i disegni e le opere
+    dell'architettura, le opere del disegno industriale che presentino carattere
+    creativo e valore artistico  il teatro: opere coreografiche e pantomimiche (con
+    o senza traccia scritta.\r\n\u2022La cinematografia: opere cinematografiche,
+    mute o con sonoro \r\n\u2022La fotografia: le opere fotografiche e quelle espresse
+    con procedimento analogo a quello della fotografia  \r\n\u2022Il software: i
+    programmi per elaboratore, in qualsiasi forma essi siano espressi, purch\xE9
+    siano il risultato di una creazione intellettuale originale dell'autore.\r\n\u2022I
+    database: le banche dati, intese come raccolte di opere, dati o altri elementi\u2022
+    indipendenti sistematicamente o metodicamente disposti ed individualmente accessibili
+    mediante mezzi elettronici o in altro modo.\r\n\u2022Le opere di disegno tecnico:
+    le opere del disegno industriale che presentino di per s\xE9 carattere creativo
+    e valore artistico. \r\nBisogna anche essere coscienti del fatto che non \xE8
+    necessario che un'opera sia registrata o che esponga il simbolo \xA9 per godere
+    dei diritti d'autore. Pertanto l'unico modo di essere certi che un'opera sia
+    libera, \xE8 che questo venga dichiarato nella licenza.\r\n"

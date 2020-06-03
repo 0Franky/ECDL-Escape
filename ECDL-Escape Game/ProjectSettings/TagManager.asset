@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Page1
+  - Page2
+  - Page3
+  - Page4
+  - Page5
+  - DestructiblePage1
+  - DestructiblePage2
+  - DestructiblePage3
+  - DestructiblePage4
+  - DestructiblePage5
+  - Page
   layers:
   - Default
   - TransparentFX

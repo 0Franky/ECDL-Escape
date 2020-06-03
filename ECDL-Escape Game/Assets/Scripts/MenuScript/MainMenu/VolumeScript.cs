@@ -19,8 +19,8 @@ public class VolumeScript : MonoBehaviour
 
         if(firstPlayInt == 0)
         {
-            backgroundFloat = .125f;
-            soundEffectsFloat = .75f;
+            backgroundFloat = 1f;
+            soundEffectsFloat = 1f;
             backgroundSlider.value = backgroundFloat;
             soundEffectsSlider.value = soundEffectsFloat;
             PlayerPrefs.SetFloat(BackgruondPref, backgroundFloat);

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc07f3417c83434d812d2001a6b061f, type: 3}
+  m_Name: Page5
+  m_EditorClassIdentifier: 
+  name: Uso Mail
+  description: "Per inviare un messaggio seguire i seguenti passaggi: \r\n\u2022Cliccare
+    sul pulsante Scrivi sul lato sinistro della pagina di Gmail.  \r\n\u2022Digitare
+    l'indirizzo email del destinatario nel campo \"A\". Quando viene digitato l'indirizzo
+    del destinatario, Gmail suggerisce indirizzi del tuo elenco contatti utilizzando
+    la funzione di completamento automatico.  \r\n\u2022Dopo aver inserito un contatto
+    nel campo \"A\", posizionare il puntatore del mouse sopra il nome del contatto
+    per visualizzarne l'indirizzo email e altre informazioni. Per modificare l'indirizzo
+    email o il nome, fare doppio clic sul nome del contatto.  \r\n\u2022Per visualizzare
+    il campo Copia per conoscenza cliccare su Cc, che si trova in alto a destra nella
+    casella di testo del messaggio. \n\nAnaloga procedura per la Ccn, Copia Conoscenza
+    nascosta. \r\n\u2022 Inserire l'oggetto del messaggio nel campo \"Oggetto\".\r\n\u2022
+    Scrivere il messaggio: cliccare sul campo sotto la riga dell'oggetto e digitare
+    il testo. Al termine della scrittura del testo cliccare su Invia in fondo alla
+    finestra di composizione.\r\nQuando si entra in Gmail, nella finestra si trovano
+    questi elementi:  \r\n\u2022Un elenco di cartelle che contengono i nostri messaggi
+    ed in particolare:\r\n1.La cartella \u201CPosta in arrivo\u201D che contiene
+    la posta che abbiamo ricevuto; \r\n2.La cartella \u201CPosta inviata\u201D che
+    contiene una copia dei messaggi che abbiamo inviato; \r\n3.La cartella \u201CBozze\u201D
+    che contiene le bozze dei messaggi, cio\xE8 i messaggi che devono essere ancora
+    completati prima di essere spediti;  \r\n\u2022Il pulsante Scrivi per comporre
+    un nuovo messaggio\r\n\u2022La Barra degli strumenti: questa barra \xE8 costituita
+    da pulsanti (Seleziona, Archivia,\u2022 Elimina, sposta in, ecc.) che effettuano
+    operazioni sui messaggi. Ad esempio il pulsante Elimina permette di cancellare
+    i messaggi selezionati.\r\n\nPer vedere il contenuto delle cartelle basta selezionarle:
+    i messaggi al loro interno saranno visualizzati nel riquadro sulla destra. Accanto
+    al nome delle caselle \xE8 presente un numero tra parentesi che ci indica il
+    numero dei messaggi ancora da leggere presenti in quella cartella; i messaggi
+    ancora da leggere sono inoltre evidenziati in grassetto. Quando clicchiamo su
+    un messaggio il grassetto scompare per il nostro clic equivale all\u2019apertura
+    del messaggio. E\u2019 poi possibile segnare i messaggi indesiderati come spam
+    (spazzatura) e quindi rimuoverli definitivamente. Il messaggio indesiderato deve
+    essere selezionato, si clicca sul pulsante Spam nella barra degli strumenti sopra
+    l'elenco dei messaggi.\r\n\nPer inviare un messaggio di posta elettronica si
+    utilizza il pulsante \u201CScrivi messaggio\u201D: cliccandolo compare una nuova
+    finestra con un messaggio vuoto. Dopo aver inserito l\u2019indirizzo o gli indirizzi
+    dei destinatari (ricorda caselle \u201CA\u201D, \u201CCc\u201D e \u201CCcn\u201D)
+    \xE8 necessario inserire l\u2019oggetto della e-mail nell\u2019apposita casella
+    oggetto specificando come in una lettera normale l\u2019argomento della mail.
+    A questo punto nello spazio bianco sottostante l\u2019oggetto dobbiamo scrivere
+    il contenuto del messaggio e una volta completato si pu\xF2 inviarlo con il pulsante
+    Invia. Gmail a questo punto ritorna alla finestra iniziale.\n\nSe un messaggio
+    \xE8 soltanto abbozzato e non ancora pronto per l\u2019invio, possiamo usare
+    il pulsante Salva e questo viene spostato nella cartella Bozze; da qui sar\xE0
+    possibile poi completarlo e quindi prelevarlo inviarlo. Al messaggio \xE8 possibile
+    allegare un file (di testo, una foto, un\u2019immagine ecc.) cliccando il link
+    \u201CAllega un file\u201D oppure ancora pi\xF9 velocemente il comando allega
+    (icona graffetta); in questo modo compare una finestra che ci permette di cercare
+    il percorso per trovare il file e quindi di selezionare il file stesso cliccando
+    nella finestra Documenti il comando \u201Capri\u201D.\n\nPer eliminare un allegato
+    dal messaggio \xE8 sufficiente selezionare la voce Elimina dal menu di scelta
+    rapida associato al file gi\xE0 visualizzato nella casella. Se al messaggio che
+    abbiamo ricevuto \xE8 allegato un file questo pu\xF2 essere visualizzato semplicemente
+    cliccando sullo stesso; al clic sul file compare una finestra che ci chiede se
+    desideriamo aprire il file oppure salvarlo. In questo secondo caso compare la
+    finestra che ci permette di decidere dove salvare il file ed eventualmente di
+    cambiare il nome dello stesso.\r\n"

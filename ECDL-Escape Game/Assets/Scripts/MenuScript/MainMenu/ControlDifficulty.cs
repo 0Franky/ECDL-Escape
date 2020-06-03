@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class ControlDifficulty : MonoBehaviour
 {
 
-    private static readonly string FirstPlay = "FirstPlay";
+    private static readonly string FirstPlay = "FirstPlay2";
     private static readonly string Difficolta = "Difficolta";
     private int firstPlayInt;
     private Text textshowed;
