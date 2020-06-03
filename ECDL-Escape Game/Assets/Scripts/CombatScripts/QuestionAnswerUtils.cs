@@ -33,11 +33,7 @@ public class NewBehaviourScript : MonoBehaviour {
         numerModule = numero del modulo di cui caricheremo le domande; 
         loadModule = boolean -> carica tutte le domande; se false continua dall'ultimo salvataggio
      */
-    public void setModule(int numerModule) {
-        setModule(numerModule, false);
-    }
-
-    public void setModule(int numerModule, bool loadModule) {
+    public void setModule(int numerModule, bool loadModule = false) {
         currentModule = numerModule;
         loadData(loadModule);
     }
