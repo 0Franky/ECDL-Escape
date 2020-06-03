@@ -175,7 +175,7 @@ public class NewBehaviourScript : MonoBehaviour {
         }
 
         public void addAnswer(Answer answer) {
-            this.answerList.Add(answer);
+            this.answerList.Insert(new System.Random().Next(0, answerList.Count), answer);
         }
 
         public int getNumberQuestion() {
