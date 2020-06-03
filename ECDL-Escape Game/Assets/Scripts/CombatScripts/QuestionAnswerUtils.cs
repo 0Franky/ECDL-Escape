@@ -14,8 +14,8 @@ public class QuestionAnswerUtils : MonoBehaviour {
     private List<QuestionAnswer> questionAnswerData = new List<QuestionAnswer>();
 
     /* FILE NAMES */
-    private string MODULE_1 = "Modulo1.csv";
-    private string MODULE_2 = "Modulo2.csv";
+    private string MODULE_1 = "Modulo1";
+    private string MODULE_2 = "Modulo2";
     private string FILE_DONE_QUESTIONS = "qd.bin";
 
     // Start is called before the first frame update
