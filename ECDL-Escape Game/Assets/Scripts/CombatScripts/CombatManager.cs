@@ -38,11 +38,15 @@ public class CombatManager : MonoBehaviour {
         combatCanvas.SetActive(true);
     }
 
-    public void DisableCombatCanvas() {
+    public void DisableCombatCanvas(float timeDelay = 0.6f) {
+        Invoke("InvokeAnimationFadeout", timeDelay - 0.6f);
+        StartCoroutine(ToggleButtons(true, enemy.gameObject.tag, timeDelay));
+        StartCoroutine(ToggleButtons(true, "Question", timeDelay));
+        Invoke("DisableCombatCanvasInvoked", timeDelay);
+    }
+
+    private void InvokeAnimationFadeout() {
         combatCanvas.GetComponent<Animator>().SetBool("disappear", true);
-        StartCoroutine(ToggleButtons(true, enemy.gameObject.tag, 0.6f));
-        StartCoroutine(ToggleButtons(true, "Question", 0.6f));
-        Invoke("DisableCombatCanvasInvoked", 0.6f);
     }
 
     public void HeadClicked() {
@@ -56,18 +60,30 @@ public class CombatManager : MonoBehaviour {
     }
 
     public void AnswerClicked(Button button) {
-        ToggleButtons(false, "Question", 0, false);
+        StartCoroutine(ToggleButtons(false, "Question"));
         Color btnColor = button.GetComponent<Image>().color;
         btnColor.a = 1;
         button.GetComponent<Image>().color = btnColor;
-        ColorBlock cb = button.colors;
+        ColorBlock cbGreen = button.colors;
+        ColorBlock cbRed = button.colors;
+        cbGreen.disabledColor = Color.green;
+        cbRed.disabledColor = Color.red;
         if (QuestionAnswerUtils.checkAnswer(Int16.Parse(button.name))) {
-            cb.normalColor = Color.green;
+            button.colors = cbGreen;
         } else {
-            cb.normalColor = Color.red;
+            button.colors = cbRed;
+            int i;
+            for (i = 0; !QuestionAnswerUtils.checkAnswer(i); i++) ;
+            combatCanvas.transform.Find("Question").gameObject.GetComponentsInChildren<Button>(true)[i].colors = cbGreen;
         }
-        button.colors = cb;
-        button.interactable = true;
+        refreshBtnUI(button);
+        DisableCombatCanvas(1.6f);
+        QuestionAnswerUtils.nextQuestion();
+    }
+
+    private void refreshBtnUI(Button button) {
+        button.interactable = !button.interactable;
+        button.interactable = !button.interactable;
     }
 
     void DisableCombatCanvasInvoked() {
@@ -85,14 +101,17 @@ public class CombatManager : MonoBehaviour {
         List<string> answers = QuestionAnswerUtils.getAnswers();
         Component[] buttons = combatCanvas.transform.Find("Question").gameObject.GetComponentsInChildren<Button>(true);
         for (int i = 0; i < buttons.Length; i++) {
-            buttons[i].GetComponentInChildren<Text>().text = answers[i];
+            if (i < answers.Count) {
+                buttons[i].GetComponentInChildren<Text>().text = answers[i];
+                buttons[i].gameObject.SetActive(true);
+            } else {
+                buttons[i].gameObject.SetActive(false);
+            }
         }
     }
 
-    IEnumerator ToggleButtons(bool activate, string parentID, float delayTime = 0f, bool asyncExc = true) {
-        if (asyncExc) {
-            yield return new WaitForSeconds(delayTime);
-        }
+    IEnumerator ToggleButtons(bool activate, string parentID, float delayTime = 0f) {
+        yield return new WaitForSeconds(delayTime);
         Component[] buttons = combatCanvas.transform.Find(parentID).gameObject.GetComponentsInChildren<Button>(true);
         foreach (Button button in buttons) {
             button.interactable = activate;

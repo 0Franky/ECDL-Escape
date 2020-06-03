@@ -62,9 +62,7 @@ public class QuestionAnswerUtils : MonoBehaviour {
      Inoltre richiama nextQuestion()
      */
     public bool checkAnswer(int numberAnswer) {
-        bool result = questionAnswerData[0].getAnswerList()[numberAnswer].isCorrect();
-        nextQuestion();
-        return result;
+        return questionAnswerData[0].getAnswerList()[numberAnswer].isCorrect();
     }
 
     /* Carica le domande da file */
@@ -112,7 +110,7 @@ public class QuestionAnswerUtils : MonoBehaviour {
     }
 
     /* Carica la domanda successiva */
-    private void nextQuestion() {
+    public void nextQuestion() {
         doneQuestions.Add(questionAnswerData[0].getNumberQuestion());
         saveDoneQuestions();
         questionAnswerData.RemoveAt(0);
