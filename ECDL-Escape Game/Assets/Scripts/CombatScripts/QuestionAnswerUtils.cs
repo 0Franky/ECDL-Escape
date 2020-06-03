@@ -20,7 +20,7 @@ public class QuestionAnswerUtils : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-
+        setModule(1);
     }
 
     // Update is called once per frame
@@ -33,9 +33,9 @@ public class QuestionAnswerUtils : MonoBehaviour {
         numerModule = numero del modulo di cui caricheremo le domande; 
         loadModule = boolean -> carica tutte le domande; se false continua dall'ultimo salvataggio
      */
-    public void setModule(int numerModule, bool loadModule = false) {
+    public void setModule(int numerModule, bool loadFromStart = true) {
         currentModule = numerModule;
-        loadData(loadModule);
+        loadData(loadFromStart);
     }
 
     /* Restituisce la domanda */
