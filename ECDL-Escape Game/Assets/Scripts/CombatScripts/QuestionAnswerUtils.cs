@@ -20,7 +20,7 @@ public class QuestionAnswerUtils : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        setModule(1); /* PER TEST */
+        //setModule(1); /* PER TEST */
     }
 
     // Update is called once per frame
@@ -83,12 +83,12 @@ public class QuestionAnswerUtils : MonoBehaviour {
         string[] rows = dataString.text.Split(new char[] { '\n' });
 
         for (int k = 0; k < rows.Length; k++) {
-            if (!String.IsNullOrEmpty(rows[k]) && !doneQuestions.Contains(k)) {
+            if (isStringAcceptable(rows[k]) && !doneQuestions.Contains(k)) {
                 string[] cols = rows[k].Split(new char[] { ';' });
 
                 QuestionAnswer questionAnswer = new QuestionAnswer();
                 for (int i = 0; i < cols.Length; i++) {
-                    if (!String.IsNullOrEmpty(cols[i])) {
+                    if (isStringAcceptable(cols[i])) {
                         if (i == 0) {
                             questionAnswer.setNumberQuestion(Int16.Parse(cols[i]));
                         } else if (i == 1) {
@@ -102,6 +102,10 @@ public class QuestionAnswerUtils : MonoBehaviour {
                 questionAnswerData.Insert(new System.Random().Next(0, questionAnswerData.Count), questionAnswer);
             }
         }
+    }
+
+    private bool isStringAcceptable(string str) {
+        return !String.IsNullOrEmpty(str) && !str.Equals("\r");
     }
 
     /* Carica la domanda successiva */
