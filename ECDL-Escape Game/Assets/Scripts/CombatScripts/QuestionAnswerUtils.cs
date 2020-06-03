@@ -44,10 +44,7 @@ public class NewBehaviourScript : MonoBehaviour
     public void setModule(int numerModule, bool loadModule)
     {
         currentModule = numerModule;
-        if (loadModule)
-        {
-            loadData();
-        }
+        loadData(loadModule);
     }
 
     /* Restituisce la domanda */
@@ -81,7 +78,7 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     /* Carica le domande da file */
-    private void loadData()
+    private void loadData(bool loadFromStart)
     {
         string fileName = MODULE_1;
         if (currentModule == 2)
@@ -92,7 +89,10 @@ public class NewBehaviourScript : MonoBehaviour
         doneQuestions.Clear();
         questionAnswerData.Clear();
 
-        loadDoneQuestions();
+        if (loadFromStart)
+        {
+            loadDoneQuestions();
+        }
 
         TextAsset dataString = Resources.Load<TextAsset>(fileName);
 
