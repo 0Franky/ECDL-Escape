@@ -94,7 +94,7 @@ public class NewBehaviourScript : MonoBehaviour {
                         } else if (i == 1) {
                             questionAnswer.setQuestion(cols[i]);
                         } else {
-                            questionAnswer.addAnswer(new Answer(cols[i], i == 1));
+                            questionAnswer.addAnswer(new Answer(cols[i], i == 2));
                         }
                     }
                 }
