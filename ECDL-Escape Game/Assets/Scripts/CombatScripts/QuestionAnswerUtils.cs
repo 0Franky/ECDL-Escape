@@ -20,7 +20,7 @@ public class QuestionAnswerUtils : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        setModule(1);
+        //setModule(1); /* PER TEST */
     }
 
     // Update is called once per frame
