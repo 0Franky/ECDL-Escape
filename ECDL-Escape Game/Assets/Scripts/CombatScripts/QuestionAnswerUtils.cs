@@ -15,8 +15,8 @@ public class NewBehaviourScript : MonoBehaviour
     private List<QuestionAnswer> questionAnswerData = new List<QuestionAnswer>();
 
     /* FILE NAMES */
-    private string MOLUDE_1 = "Modulo1.csv";
-    private string MOLUDE_2 = "Modulo2.csv";
+    private string MODULE_1 = "Modulo1.csv";
+    private string MODULE_2 = "Modulo2.csv";
     private string FILE_DONE_QUESTIONS = "qd.bin";
 
     // Start is called before the first frame update
@@ -83,10 +83,10 @@ public class NewBehaviourScript : MonoBehaviour
     /* Carica le domande da file */
     private void loadData()
     {
-        string fileName = MOLUDE_1;
+        string fileName = MODULE_1;
         if (currentModule == 2)
         {
-            fileName = MOLUDE_2;
+            fileName = MODULE_2;
         }
 
         doneQuestions.Clear();
