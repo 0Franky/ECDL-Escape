@@ -78,7 +78,7 @@ public class NewBehaviourScript : MonoBehaviour {
         doneQuestions.Clear();
         questionAnswerData.Clear();
 
-        if (loadFromStart) {
+        if (!loadFromStart) {
             loadDoneQuestions();
         }
 
