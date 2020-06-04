@@ -1,0 +1,20 @@
+COME APRIRE I FILE QUI PRESENTI
+
+Per aprire i file con estensione .PDF presenti in questa cartella,
+bisogna aver installato sul proprio computer un PDF reader\viewer.
+Se sul proprio computer non se ne ha a disposizione nessuno, è possibile
+installare quello allegato in questo CD presente nella sottocartella PDF
+della cartella Strumenti.
+
+Se si ha a disposizione un Sistema Operativo:
+- Windows: installare il file presente nella sottocartella "Windows"
+- Macintosh (MacOS): installare il file presente nella sottocartella "MacOS"
+- Linux: installare il file con estensione:
+	- .RPM: se si ha una distribuzione basata su Red Hat
+	- .DEB: se si ha una distribuzionr basata su Debian
+	Se non si rientra nei casi precedenti è possibile installare il PDF
+	reader\viewer presente nell'archivio con estensione .TAR
+
+Dopo aver installato un PDF reader\viewer, per aprire e visionare un file,
+è sufficiente fare doppio click (oppure tasto destro del mouse -> Apri in Windows),
+o click sul file selezionato per aprirlo.

@@ -4,17 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Page1
-  - Page2
-  - Page3
-  - Page4
-  - Page5
-  - DestructiblePage1
-  - DestructiblePage2
-  - DestructiblePage3
-  - DestructiblePage4
-  - DestructiblePage5
-  - Page
+  - Enemy01
+  - Enemy02
+  - Boss01
+  - Boss02
   layers:
   - Default
   - TransparentFX
@@ -24,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -49,6 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2292861565
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Character
+    uniqueID: 3965399845
     locked: 0
