@@ -12,6 +12,7 @@ public class CombatManager : MonoBehaviour {
     public GameObject combatCanvas;
     public int numberModule = 1;
     public QuestionAnswerUtils QuestionAnswerUtils;
+    public Slider timeSlider;
     bool head = false;
     bool body = false;
 
@@ -35,11 +36,17 @@ public class CombatManager : MonoBehaviour {
         }
     }
 
+    public void TimeExpired() {
+        Invoke("EnemyAtt", 1.9f);
+        body = false;
+        head = false;
+        DisableCombatCanvas(1.6f);
+        QuestionAnswerUtils.nextQuestion();
+    }
     public void EnableCombatCanvas() {
         combatCanvas.transform.Find(enemy.gameObject.tag).gameObject.SetActive(true);
         combatCanvas.SetActive(true);
     }
-
     public void DisableCombatCanvas(float timeDelay = 0.6f) {
         Invoke("InvokeAnimationFadeout", timeDelay - 0.6f);
         StartCoroutine(ToggleButtons(true, enemy.gameObject.tag, timeDelay));
@@ -52,23 +59,26 @@ public class CombatManager : MonoBehaviour {
     }
 
     public void HeadClicked() {
+        timeSlider.GetComponent<SliderUtils>().isTimeActive = true;
+        timeSlider.value = 5;
         DisableButtonsAndShowQuestion();
         head = true;
         Debug.Log("Head Clicked");
+        
     }
 
     public void BodyClicked() {
+        timeSlider.GetComponent<SliderUtils>().isTimeActive = true;
+        timeSlider.value = 10;
         DisableButtonsAndShowQuestion();
         body = true;
         Debug.Log("Body Clicked");
     }
 
     public void AnswerClicked(Button button) {
+        timeSlider.GetComponent<SliderUtils>().isTimeActive = false;
         StartCoroutine(resetColorDisabledButton("Question"));
         StartCoroutine(ToggleButtons(false, "Question"));
-        //Color btnColor = button.GetComponent<Image>().color;
-        //btnColor.a = 1;
-        //button.GetComponent<Image>().color = btnColor;
         StartCoroutine(setBGColorBtns(button));
     }
 
@@ -82,12 +92,15 @@ public class CombatManager : MonoBehaviour {
         if (QuestionAnswerUtils.checkAnswer(Int16.Parse(button.name))) {
             button.colors = cbGreen;
             if (body) {
-                Invoke("PlayerAtt01", 2.1f);
+                Invoke("PlayerAtt01", 1.9f);
+                enemyHealth--;
             }
             if (head) {                                                          // Se hai scelto di colpire alla testa e hai azzeccato la risposta, l'animazione del personaggio sarà diversa
-                Invoke("PlayerAtt02", 2.1f);
+                Invoke("PlayerAtt02", 1.9f);
+                enemyHealth -= 2;
             }
         } else {
+            Invoke("EnemyAtt", 1.9f);
             button.colors = cbRed;
             int i;
             for (i = 0; !QuestionAnswerUtils.checkAnswer(i); i++) ;
@@ -129,24 +142,48 @@ public class CombatManager : MonoBehaviour {
         }
     }
 
+    void CheckEnemyHealth() {
+        if (enemyHealth <= 0) {
+            Invoke("EnemyDeath", 1f);
+        }
+        else {
+            Invoke("EnemyHit", 1f);
+            Invoke("EnableCombatCanvas", 1.8f);
+        }
+    }
     void PlayerAtt01() {
         player.GetComponent<Animator>().SetBool("attack01", true);
-        Invoke("EnemyHit", 1f);
+        CheckEnemyHealth();
     }
-
     void PlayerAtt02() {
         player.GetComponent<Animator>().SetBool("attack02", true);
-        Invoke("EnemyHit", 1f);
-
+        CheckEnemyHealth();
+    }
+    void EnemyAtt() {
+        enemy.GetComponent<Animator>().SetBool("attack01", true);
+        Invoke("EnemyAttackFalse", 0.1f);
+        Invoke("PlayerHit", 0.2f);
     }
 
+    void PlayerHit() {
+        player.GetComponent<Animator>().SetBool("hit", true);
+    }
     void EnemyHit() {
         enemy.GetComponent<Animator>().SetBool("hit", true);
         Invoke("EnemyHitFalse", 0.1f);
     }
-
+    void EnemyDeath() {
+        enemy.GetComponent<Animator>().SetBool("died", true);
+        Invoke("DisableEnemyObject", 1.6f);
+    }
     void EnemyHitFalse() {
         enemy.GetComponent<Animator>().SetBool("hit", false);
+    }
+    void EnemyAttackFalse() {
+        enemy.GetComponent<Animator>().SetBool("attack01", false);
+    }
+    void DisableEnemyObject() {
+        enemy.gameObject.SetActive(false);
     }
 
     IEnumerator ToggleButtons(bool activate, string parentID, float delayTime = 0f) {

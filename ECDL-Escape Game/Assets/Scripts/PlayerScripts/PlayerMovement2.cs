@@ -100,9 +100,9 @@ public class PlayerMovement2 : MonoBehaviour {
         Debug.Log("Attack02Ended");
     }
 
-    // Called when entering combat to go towards enemy
-    public void GoToEnemy(Transform enemyPos) {
-        
+    public void HitEnded() {
+        anmtr.SetBool("hit", false);
+        Debug.Log("Hit ended");
     }
 
     private bool noAttacking() {
