@@ -64,8 +64,8 @@ public class CombatManager : MonoBehaviour {
     }
 
     public void AnswerClicked(Button button) {
-        StartCoroutine(ToggleButtons(false, "Question"));
         StartCoroutine(resetColorDisabledButton("Question"));
+        StartCoroutine(ToggleButtons(false, "Question"));
         //Color btnColor = button.GetComponent<Image>().color;
         //btnColor.a = 1;
         //button.GetComponent<Image>().color = btnColor;
