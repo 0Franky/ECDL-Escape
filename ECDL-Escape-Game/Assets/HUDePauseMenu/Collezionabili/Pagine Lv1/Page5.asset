@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc07f3417c83434d812d2001a6b061f, type: 3}
+  m_Name: Page5
+  m_EditorClassIdentifier: 
+  name: Rete
+  description: "Con il termine rete si intende un insieme di componenti, sistemi
+    o entit\xE0 interconnessi tra loro. Nell\u2019ambito dell\u2019informatica, una
+    rete \xE8 un complesso sistema di connessione di dispositivi informatici attraverso
+    collegamenti fisici al fine di utilizzare nel miglior modo possibile le risorse
+    disponibili e di offrire vari servizi di comunicazione.\r\n\nIl progetto di una
+    rete copre ampie problematiche che vanno della sua architettura fisica alla codifica
+    dei dati per facilitare la trasmissione, fino alla costruzione del software applicativo
+    che mette a disposizione degli utenti i servizi di rete. Internet \xE8 la rete
+    a livello mondiale che mette a disposizione degli utenti collegati informazioni,
+    file, materiale di vario genere in forma di pagine ipertestuali cio\xE8 pagine
+    che oltre al testo hanno immagini, filmati e soprattutto link, collegamenti ad
+    altre pagine dello stesso tipo. Internet \xE8 una rete di calcolatori che collega
+    elaboratori situati in ogni parte del mondo; attualmente consente a centinaia
+    di milioni di utenti di collegarsi gli uni agli altri per scambiare documenti,
+    immagini o semplici messaggi.\r\n\nIn realt\xE0 internet \xE8 una rete di reti,
+    cio\xE8, collega fisicamente tra loro centinaia di migliaia di reti locali di
+    elaboratori. Il successo di internet \xE8 basato sul modo semplice ed efficace
+    che hanno gli utenti per accedere alle informazioni. L\u2019utilizzo di pagine
+    ipertestuali, il WWW. Infatti, alla fine degli anni 80 il CERN di Ginevra, mette
+    a punto il WWW (World Wide Web).\r\n\nIl WWW consiste nell\u2019organizzazione
+    delle informazioni in modo ipertestuale; l\u2019utilizzo del WWW, assieme alla
+    diminuzione dei costi di accesso ed utilizzo della rete, ha permesso un incremento
+    esponenziale nella diffusione di internet. Una pagina ipertestuale \xE8 una pagina
+    con testo, immagini, video, cio\xE8 elementi multimediali, che ha qualcosa in
+    pi\xF9 rispetto alle pagine \u201Cnormali\u201D: sono presenti i link. I link,
+    in pratica, sono puntatori ad altre pagine ipertestuali. Ma anche un\u2019immagine
+    pu\xF2 essere un link: con un clic sul link si passa alla pagina ipertestuale
+    indicata. Quindi la lettura pu\xF2 seguire molti percorsi alternativi. Il codice
+    con cui viene scritta una pagina ipertestuale \xE8 l\u2019HTML (HyperText Markup
+    Language). \r\n\nQuesto codice viene interpretato dal programma che permette
+    di navigare in internet, il browser: esempi di browser sono Internet Exporer,
+    Firefox, ecc. Quindi un link permette di raggiungere altre risorse di internet.
+    Per consentire i passaggi ipertestuali si \xE8 sviluppato il cosiddetto URL (Uniform
+    Resource Locator) che rappresenta il nome con le risorse sono conosciute dalla
+    rete internet. Oltre alle pagine Web, internet mette a disposizione vari servizi: 
+    E-Mail: il servizio di posta elettronica\r\n\u2022  E-commerce: commercio e vendita
+    on line\r\n\u2022  E-Learning: istruzione attraverso la rete\r\n\u2022  Download
+    e Upload di file: la possibilit\xE0 di scaricare programmi, immagini,\r\n\u2022
+    documenti, in generale file, dai siti internet. Questo processo \xE8 chiamato
+    Download. \r\n\nViceversa la possibilit\xE0 di inserire contenuti in siti che
+    li ospitano \xE8 chiamato Upload: ad esempio, inserire un filmato su Youtube.
+    Le velocit\xE0 di caricamento e scaricamento dipendono dal tipo di linea di modem
+    e si misurano in bit per secondo Kilobit per secondo megabit per secondo gigabit
+    per secondo Con l'introduzione della tecnologia ADSL la velocit\xE0 di trasferimento
+    \xE8 di 20 mbps Con la fibra ottica,si raggiungono velocit\xE0 di trasmissione
+    dati dell'ordine dei gbps.\r\nIntranet \xE8 una rete locale (LAN), o un raggruppamento
+    di reti locali, usata all'interno di una organizzazione, di una impresa, per
+    la comunicazione e l'accesso alle informazioni aziendali, che pu\xF2 essere ad
+    accesso ristretto. In pratica \xE8 una rete internet interna cio\xE8 con un aspetto
+    del tutto simile alla rete internet, con pagine ipertestuali, link, posta elettronica,
+    ecc. per navigare all\u2019interno della struttura dell\u2019azienda: quindi
+    ci pu\xF2 essere un link per raggiungere la pagina web del magazzino, dell\u2019ufficio
+    commerciale, ecc. Non \xE8 altro che il sistema di siti che formano uno spazio
+    web interno alla azienda. A livello tecnologico l'intranet pu\xF2 essere definita
+    come la rete informatica interna basata sul protocollo TCP/IP. Quando una parte
+    della intranet viene resa accessibile a clienti, partner o altre persone esterne
+    all'organizzazione, tale parte diventa una extranet: ad esempio se il catalogo
+    dei prodotti dell\u2019azienda viene reso accessibile anche da utenti esterni
+    si ha una extranet. Una VPN \xE8 una rete privata che sfrutta una rete pubblica,
+    la rete internet, per permettere ai computer appartenenti alla rete di comunicare
+    tra loro come se fossero collegati allo stesso server. Il termine \u201CVirtuale\u201D
+    \xE8 dovuto al fatto che i computer non sono effettivamente collegati solo tra
+    loro, non hanno delle linee dedicate, ma utilizzano una struttura pubblica quale,
+    appunto, la rete internet. La rete VPN permette a computer ubicati in luoghi
+    fisici diversi di stabilire un collegamento privato come se ci fosse un \u201Ctunnel\u201D
+    virtuale che corre tra i nodi pubblici di internet. Dato che le connessioni a
+    internet sono connessioni pubbliche, quindi con accesso non protetto, c\u2019\xE8
+    il rischio che le informazioni trasmessa sul web attraverso una VPN possano essere
+    intercettate. Per questo motivo con una rete VPN \xE8 possibile crittografare
+    i dati e inviarli solo a un computer, o a gruppi di computer specifici.\r\nInoltre
+    i collegamenti attraverso le reti VPN necessitano di una autenticazione all\u2019accesso,
+    in modo che l\u2019utilizzo sia concesso solo a utenti autorizzati. La sicurezza
+    \xE8 quindi garantita dai protocolli di cifratura e dall\u2019autenticazione.\r\n"

@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc07f3417c83434d812d2001a6b061f, type: 3}
+  m_Name: Page2
+  m_EditorClassIdentifier: 
+  name: Aree di sicurezza
+  description: "Modificando le impostazioni di sicurezza, \xE8 possibile personalizzare
+    la protezione del PC da parte di Internet Explorer contro contenuti Web potenzialmente
+    dannosi o pericolosi. In Internet Explorer tutti i siti Web vengono assegnati
+    automaticamente a un'area di sicurezza: Internet, Intranet locale, Siti attendibili
+    o Siti con restrizioni. Ogni area ha un livello di sicurezza predefinito che
+    determina il tipo di contenuto che potrebbe essere bloccato per il sito. A seconda
+    del livello di sicurezza di un sito, parte del contenuto pu\xF2 essere bloccata
+    fino a quando l'utente non sceglie di sbloccarla. I controlli ActiveX, Uso di
+    ActiveX Filtering, potrebbero non essere eseguiti automaticamente oppure potrebbero
+    essere visualizzati avvisi su determinati siti. \xC8 possibile personalizzare
+    le impostazioni per ogni area determinando il livello di protezione desiderato.
+    Modificare le impostazioni relative alle aree di sicurezza Di seguito viene descritto
+    come personalizzazione le impostazioni per le aree di sicurezza.\n \r\n1.Cliccare
+    sul pulsante Strumenti e quindi selezionare Opzioni Internet. \r\n2.Selezionare
+    la scheda Sicurezza per personalizzare le impostazioni delle aree di sicurezza
+    come indicato di seguito: \r\na. Per modificare le impostazioni per un'area di
+    sicurezza, cliccare sull'icona dell'area e quindi spostare il dispositivo di
+    scorrimento sul livello di sicurezza desiderato. \r\nb. Per creare delle impostazioni
+    di sicurezza personalizzate per un'area cliccare sull'icona dell'area e quindi
+    su Livello personalizzato.\r\nc. Per ripristinare le impostazioni originali per
+    tutti i livelli di sicurezza, cliccare sul pulsante Ripristina livello predefinito
+    per tutte le aree. \r\nAggiungere o rimuovere un sito in un'area di sicurezza
+    Per aggiungere o rimuovere un sito in un'area di sicurezza: \r\n\n1.Cliccare
+    sul pulsante Strumenti e quindi selezionare Opzioni Internet. \r\n2.Nella scheda
+    Sicurezza selezionare un'area di sicurezza scegliendo tra Intranet locale, Siti
+    attendibili e Siti con restrizioni e quindi cliccare su Siti. \xC8 possibile
+    aggiungere siti all'area scelta oppure eliminare i siti che non si desidera pi\xF9
+    includere nell'area. \r\n3.Se nel passaggio precedente \xE8 stato scelto Intranet
+    locale, cliccare su Avanzate e quindi eseguire una delle operazioni seguenti:\r\na.
+    Aggiungere un sito: immettere un URL nella casella Aggiungi il sito Web all'area
+    e quindi toccare o fare clic su Aggiungi. \r\nb. Rimuovere un sito: in Siti Web
+    selezionare l'URL che si desidera rimuovere e quindi toccare o fare clic su Rimuovi.
+    La modalit\xE0 protetta avanzata ostacola l'esecuzione di malware in Internet
+    Explorer. \r\nPer impostazione predefinita, \xE8 attivata per Internet Explorer
+    10, tuttavia \xE8 possibile disattivarla in Internet Explorer per desktop.  A
+    tale scopo, eseguire le operazioni seguenti: \r\n1.Aprire Internet Explorer per
+    desktop.\r\n2.Toccare o fare clic sul pulsante Strumenti e quindi toccare o fare
+    clic su Opzioni Internet. \r\n3. Nella scheda Avanzate, in Sicurezza, selezionare
+    la casella di controllo Abilita modalit\xE0 protetta avanzata.\r\n4.Cliccare
+    su OK. Affinch\xE9 questa impostazione diventi effettiva, sar\xE0 necessario
+    riavviare il PC. \r\nI cookie sono file di testo di piccole dimensioni inseriti
+    dai siti Web nel computer allo scopo di archiviare informazioni sull'utente e
+    sulle relative preferenze. I cookie possono contribuire a migliorare l'esplorazione
+    consentendo ai siti Web di raccogliere informazioni utili sulle preferenze dell'utente
+    o evitando all'utente di eseguire l'accesso ogni volta che visita determinati
+    siti. Tuttavia, alcuni cookie possono costituire un rischio per la privacy in
+    quanto tengono traccia dei siti visitati.\r\n"

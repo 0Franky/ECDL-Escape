@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc07f3417c83434d812d2001a6b061f, type: 3}
+  m_Name: Page1
+  m_EditorClassIdentifier: 
+  name: Hardware
+  description: "Un sistema informatico \xE8 l\u2019insieme di molte parti che cooperano
+    per memorizzare e manipolare l\u2019informazione. Studiare l\u2019architettura
+    di un sistema informatico significa individuarne le varie parti, comprenderne
+    il principio generale di funzionamento ed intuire come le singole parti interagiscono
+    fra di loro. Una prima, iniziale suddivisione di un sistema informatico viene
+    fatta distinguendo due componenti separate ma mutuamente dipendenti: l\u2019hardware
+    e il software. Con il termine Hardware si intende la parte fisica del computer,
+    tutto quello che si pu\xF2 toccare.\n\nHARD = RIGIDO, DURO \nWARE = MATERIALE
+    \n\nQuindi monitor, tastiera, masterizzatore DVD, hard disk,mouse, stampante
+    ecc., \xE8 tutto hardware. Questo, appunto, per distinguere dall\u2019altro gruppo
+    di componenti di un calcolatore, senza il quale non potrebbe funzionare, che
+    \xE8 il software, cio\xE8 i dati e i programmi, le istruzioni che permetto al
+    pc di eseguire i compiti. Tipologia di elaboratori Con il termine computer si
+    indicano apparecchiature informatiche basate su un medesimo modello teorico,
+    ma con caratteristiche ed utilizzi molto diversi. Vengono quindi definite alcune
+    categorie, dai confini non sempre ben definiti, in cui trovano posto i vari computer,
+    dai pi\xF9 semplici ai pi\xF9 complessi. Se si vuole rappresentare un elenco
+    ordinato per dimensioni e potenza di calcolo dei vari tipi di calcolatori, si
+    pu\xF2 considerare: \r\n\n1.Supercomputer, Sono dei computer molto potenti che
+    sfruttano le tecnologie pi\xF9 moderne e costose per poter elaborare con altissime
+    velocit\xE0. Sono utilizzati in ambito aerospaziale, per calcolare le rotte dei
+    satelliti, in campo militare, aeronautico, ecc. Quindi sono dei calcolatori specializzati
+    a svolgere determinate operazioni con altissime velocit\xE0. In generale non
+    sono quindi progettati per un utilizzo generale, come un personal computer che
+    serve per scrivere, calcolare, giocare, ecc., ma per svolgere poche cose in modo
+    velocissimo\r\n\n2.Mainframe, \xC8 un sistema di grandi dimensioni, utilizzato
+    spesso nelle reti di computer, che gestisce diverse centinaia di computer mettendo
+    a disposizione le sue enormi memorie di massa e i suoi molti processori. A volte
+    i computer collegati ad un mainframe non posseggono unit\xE0 di memoria proprie
+    o processori propri: per questo motivo sono chiamati terminali stupidi. Questa
+    tipologia sta comunque scomparendo. I mainframe sono diffusi, negli ospedali,
+    nelle grandi aziende che devono mantenere notevoli quantit\xE0 di dati in una
+    unica sede ai quali devono accedere tutte le filiali periferiche.\r\n\n3.Minicomputer,
+    Quando si tratta di decine di calcolatori che accedono al sistema informatico
+    si parla di minicomputer: \xE8 lo stesso concetto dei mainframe in scala ridotta.
+    Si trovano in realt\xE0 aziendali di piccole, medie dimensioni: anche in questo
+    caso decine di terminali stupidi accedono alle risorse messe a diposizione. In
+    realt\xE0, questo tipo di sistemi va scomparendo, o meglio si sta trasformando
+    in server, una macchina, cio\xE8, a cui gli utenti si collegano non tramite terminali,
+    ma attraverso personal computer dotati di scheda di comunicazione. Rivedremo
+    questi concetti quando si parler\xE0 di reti di computer.\r\n\n4.Workstation,
+    La definizione di workstation \xE8 quella di un personal computer che ha capacit\xE0
+    di elaborazione, memorizzazione, grafiche e costo superiori a quelle di un personal
+    computer standard. La definizione rende gi\xE0 l\u2019idea di quanto sia difficile
+    distinguere un PC di fascia alta da una workstation. Diciamo che la struttura
+    di una workstation appare potenziata: il monitor risulta essere di notevoli dimensioni
+    per visualizzare anche immagini ad alta definizione, mentre uno o pi\xF9 processori
+    consentono di trattare una grosse mole di dati.\r\n\n5.Personal computer o PC,
+    \xE8 ormai conosciuto da tutti. \xC8 un piccolo sistema indipendente in termini
+    di risorse e dedicato ad un unico utente. Con un PC si pu\xF2 scrivere, navigare
+    in internet, giocare, ecc. ma c\u2019\xE8 sempre un solo utilizzatore. Le tipologie
+    dei PC sono diverse e sempre in evoluzione. Per adesso si pu\xF2 distinguere
+    in: PC: Computer Fissi o Desktop \xC8 il personal computer da scrivania, non
+    facilmente trasportabile da un luogo ad un altro, ma destinato a restare dove
+    \xE8 lasciato, collegato alla corrente elettrica ed alla linea telefonica per
+    la navigazione in internet. \r\nPrima di trattare ogni singola categoria, vogliamo
+    precisare che il confine tra una \xE8 l\u2019altra \xE8 molto labile: con la
+    velocit\xE0 dell\u2019evoluzione tecnologica, quello che oggi classifichiamo
+    come workstation tra sei mesi sar\xE0 superato in termini di velocit\xE0 di elaborazione
+    e quindi sar\xE0 considerato un personal computer.\r\n"
