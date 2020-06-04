@@ -139,6 +139,10 @@ public class QuestionAnswerUtils : MonoBehaviour {
         }
     }
 
+    private static int getRndNumber(int max) {
+        return Math.Abs(new System.Random().Next(-max * 3, max * 8)) % (max + 1);
+    }
+
 
     /* CLASSI DI SUPPORTO */
     class Answer {
@@ -176,7 +180,7 @@ public class QuestionAnswerUtils : MonoBehaviour {
         }
 
         public void addAnswer(Answer answer) {
-            this.answerList.Insert(new System.Random().Next(0, answerList.Count), answer);
+            this.answerList.Insert(getRndNumber(answerList.Count), answer);
         }
 
         public int getNumberQuestion() {
