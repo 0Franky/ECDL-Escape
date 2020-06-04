@@ -69,6 +69,12 @@ public class CombatManager : MonoBehaviour {
         //Color btnColor = button.GetComponent<Image>().color;
         //btnColor.a = 1;
         //button.GetComponent<Image>().color = btnColor;
+        StartCoroutine(setBGColorBtns(button));
+    }
+
+    IEnumerator setBGColorBtns(Button button, float delayTime = 0.1f) {
+        yield return new WaitForSeconds(delayTime);
+
         ColorBlock cbGreen = button.colors;
         ColorBlock cbRed = button.colors;
         cbGreen.disabledColor = Color.green;
