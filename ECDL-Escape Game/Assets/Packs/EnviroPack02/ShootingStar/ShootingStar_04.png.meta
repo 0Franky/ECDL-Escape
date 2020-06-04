@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 02c4c86d693766942b5815ac03b3e603
+=======
 guid: 0d2ef4ddbf2001a46822f8101a30e8cd
+>>>>>>> HUDePauseMenu
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -31,7 +35,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
+    filterMode: -1
+=======
     filterMode: 0
+>>>>>>> HUDePauseMenu
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -70,6 +78,8 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
+=======
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -130,6 +140,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+>>>>>>> HUDePauseMenu
   spriteSheet:
     serializedVersion: 2
     sprites: []
