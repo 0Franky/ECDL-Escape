@@ -65,9 +65,10 @@ public class CombatManager : MonoBehaviour {
 
     public void AnswerClicked(Button button) {
         StartCoroutine(ToggleButtons(false, "Question"));
-        Color btnColor = button.GetComponent<Image>().color;
-        btnColor.a = 1;
-        button.GetComponent<Image>().color = btnColor;
+        StartCoroutine(resetColorDisabledButton("Question"));
+        //Color btnColor = button.GetComponent<Image>().color;
+        //btnColor.a = 1;
+        //button.GetComponent<Image>().color = btnColor;
         ColorBlock cbGreen = button.colors;
         ColorBlock cbRed = button.colors;
         cbGreen.disabledColor = Color.green;
@@ -80,8 +81,7 @@ public class CombatManager : MonoBehaviour {
             if (head) {                                                          // Se hai scelto di colpire alla testa e hai azzeccato la risposta, l'animazione del personaggio sarà diversa
                 Invoke("PlayerAtt02", 2.1f);
             }
-        }
-        else {
+        } else {
             button.colors = cbRed;
             int i;
             for (i = 0; !QuestionAnswerUtils.checkAnswer(i); i++) ;
@@ -131,7 +131,7 @@ public class CombatManager : MonoBehaviour {
     void PlayerAtt02() {
         player.GetComponent<Animator>().SetBool("attack02", true);
         Invoke("EnemyHit", 1f);
-        
+
     }
 
     void EnemyHit() {
@@ -144,10 +144,24 @@ public class CombatManager : MonoBehaviour {
     }
 
     IEnumerator ToggleButtons(bool activate, string parentID, float delayTime = 0f) {
+        return ActionOnButtons((Button button) => button.interactable = activate, parentID, delayTime);
+    }
+
+    IEnumerator resetColorDisabledButton(string parentID, float delayTime = 0f) {
+        return ActionOnButtons((Button button) => {
+            ColorBlock cb = button.colors;
+            Color c = cb.disabledColor;
+            c.a = 0f;
+            cb.disabledColor = c;
+            button.colors = cb;
+        }, parentID, delayTime);
+    }
+
+    IEnumerator ActionOnButtons(Action<Button> callback, string parentID, float delayTime = 0f) {
         yield return new WaitForSeconds(delayTime);
         Component[] buttons = combatCanvas.transform.Find(parentID).gameObject.GetComponentsInChildren<Button>(true);
         foreach (Button button in buttons) {
-            button.interactable = activate;
+            callback(button);
         }
     }
 }
