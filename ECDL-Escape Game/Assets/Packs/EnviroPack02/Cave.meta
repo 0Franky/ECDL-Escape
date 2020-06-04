@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 8a09ec9d3cf30cf40ae31cb1cfdec57b
+=======
+guid: 47b360df9961c244e8a006c80e9d1094
+>>>>>>> HUDePauseMenu
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
