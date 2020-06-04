@@ -27,6 +27,11 @@ public class EnemyManager : MonoBehaviour {
         }
     }
 
+    public void HitEnded() {
+        Debug.Log("AO");
+        myPos.gameObject.GetComponent<Animator>().SetBool("hit", false);
+    }
+
     //Shows combat canvas and enables CombatManager script
     void EnableCombatManager() {
         combatManager.enabled = true;

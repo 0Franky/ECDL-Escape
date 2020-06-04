@@ -12,6 +12,8 @@ public class CombatManager : MonoBehaviour {
     public GameObject combatCanvas;
     public int numberModule = 1;
     public QuestionAnswerUtils QuestionAnswerUtils;
+    bool head = false;
+    bool body = false;
 
     // Start is called before the first frame update
     void Start() {
@@ -51,11 +53,13 @@ public class CombatManager : MonoBehaviour {
 
     public void HeadClicked() {
         DisableButtonsAndShowQuestion();
+        head = true;
         Debug.Log("Head Clicked");
     }
 
     public void BodyClicked() {
         DisableButtonsAndShowQuestion();
+        body = true;
         Debug.Log("Body Clicked");
     }
 
@@ -70,12 +74,21 @@ public class CombatManager : MonoBehaviour {
         cbRed.disabledColor = Color.red;
         if (QuestionAnswerUtils.checkAnswer(Int16.Parse(button.name))) {
             button.colors = cbGreen;
-        } else {
+            if (body) {
+                Invoke("PlayerAtt01", 2.1f);
+            }
+            if (head) {                                                          // Se hai scelto di colpire alla testa e hai azzeccato la risposta, l'animazione del personaggio sarà diversa
+                Invoke("PlayerAtt02", 2.1f);
+            }
+        }
+        else {
             button.colors = cbRed;
             int i;
             for (i = 0; !QuestionAnswerUtils.checkAnswer(i); i++) ;
             combatCanvas.transform.Find("Question").gameObject.GetComponentsInChildren<Button>(true)[i].colors = cbGreen;
         }
+        body = false;
+        head = false;
         refreshBtnUI(button);
         DisableCombatCanvas(1.6f);
         QuestionAnswerUtils.nextQuestion();
@@ -108,6 +121,26 @@ public class CombatManager : MonoBehaviour {
                 buttons[i].gameObject.SetActive(false);
             }
         }
+    }
+
+    void PlayerAtt01() {
+        player.GetComponent<Animator>().SetBool("attack01", true);
+        Invoke("EnemyHit", 1f);
+    }
+
+    void PlayerAtt02() {
+        player.GetComponent<Animator>().SetBool("attack02", true);
+        Invoke("EnemyHit", 1f);
+        
+    }
+
+    void EnemyHit() {
+        enemy.GetComponent<Animator>().SetBool("hit", true);
+        Invoke("EnemyHitFalse", 0.1f);
+    }
+
+    void EnemyHitFalse() {
+        enemy.GetComponent<Animator>().SetBool("hit", false);
     }
 
     IEnumerator ToggleButtons(bool activate, string parentID, float delayTime = 0f) {
